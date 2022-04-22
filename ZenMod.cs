@@ -20,8 +20,11 @@ namespace ZenMod
 {
 	public class ZenMod : Mod
 	{
+		public static ZenMod get => ModContent.GetInstance<ZenMod>();
+		public static void Log(string text) => get.Logger.InfoFormat(text);
+		
 		public override void Load() {
-			ZenSystemLoader.Load();
+			ZenSystemLoader.Load(this);
 		}
 		public override void Unload() {
 			ZenSystemLoader.Unload();

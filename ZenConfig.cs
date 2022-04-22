@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
+using Terraria.ModLoader;
 
 namespace ZenMod
 {
@@ -8,7 +9,7 @@ namespace ZenMod
     public class SpriteSetting : ModConfig
     {
         public override ConfigScope Mode => ConfigScope.ClientSide;
-        public static SpriteSetting get => ModContent.GetInstance<ZenConfig>();
+        public static SpriteSetting get => ModContent.GetInstance<SpriteSetting>();
 
         [Label("Zen Textures")]
         [Tooltip("Change some textures into a new one")]

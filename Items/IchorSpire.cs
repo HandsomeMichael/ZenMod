@@ -36,11 +36,8 @@ namespace ZenMod.Items
 
         public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI){
             Texture2D texture = ModContent.GetTexture(Texture+"_Glow");
-            Vector2 pos = new Vector2(item.position.X - Main.screenPosition.X + item.width * 0.5f,item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f)
+            Vector2 pos = new Vector2(item.position.X - Main.screenPosition.X + item.width * 0.5f,item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f);
             spriteBatch.Draw(texture,pos,null,Color.White,rotation,texture.Size()/2f,scale,SpriteEffects.None,0f);
-        }
-        public override void MeleeEffects(Player player, Rectangle hitbox){
-            Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.Ichor);
         }
         public override void AddRecipes()
         {

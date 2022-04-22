@@ -22,7 +22,7 @@ namespace ZenMod
             public int type;
             public string texture;
             public ItemGlow(int type, string texture,Vector2 offset) {
-                this.offset = offset;
+                this.type = type;
                 this.texture = texture;
                 this.offset = offset;
             }
@@ -68,13 +68,14 @@ namespace ZenMod
 				return;
 			}
             Player drawPlayer = drawInfo.drawPlayer;
-            Mod mod = ModContent.GetInstance<ZenMod>();
-            if (!drawPlayer.HeldItem.IsAir)
+            Mod mod = ZenMod.get;
+            // prevent draw for empty item and only when item is used
+            if (!drawPlayer.HeldItem.IsAir && drawPlayer.itemAnimation > 0)
             {
+                // get useglow data, and if it doesnt have one then dont get it
                 Item item = drawPlayer.HeldItem;
                 var b = Get(item.type);
-                //Texture2D texture = item.GetGlobalItem<ItemUseGlow>().glowTexture;
-                if (b != null && drawPlayer.itemAnimation > 0)
+                if (b != null)
                 {
                     Texture2D texture = ModContent.GetTexture(b.texture);
                     float glowOffsetX = b.offset.X;

@@ -68,7 +68,7 @@ namespace ZenMod
         public static void PreSaveAndQuit() {
             foreach (var item in systems){
                 if (item is IPreSaveAndQuit hook) {
-                    Deltarune.get.Logger.InfoFormat($"PreSaveQuit System : {hook.GetType().Name}");
+                    ZenMod.Log($"PreSaveQuit System : {hook.GetType().Name}");
                     hook.PreSaveAndQuit();
                 }
             }
@@ -83,7 +83,7 @@ namespace ZenMod
             foreach (var item in systems){
                 if (item is ILoggable hook) {
                     void CreateLog(string text) {
-                        Deltarune.get.Logger.InfoFormat(text);
+                        ZenMod.Log(text);
                         Main.NewText(text);
                     }
                     Action<string> log = CreateLog;

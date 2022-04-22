@@ -18,13 +18,13 @@ namespace ZenMod
             if (!Main.dedServ){
                 // mini map
                 OldMiniMap = Main.miniMapFrameTexture;
-                if (SpriteSetting.ZenTexture) {
+                if (SpriteSetting.get.ZenTexture) {
                     Main.miniMapFrameTexture = ModContent.GetTexture("ZenMod/Textures/MiniMapFrameZen");
                 }
                 // logo
                 OldTitleLogo = Main.logoTexture;
                 OldTitleLogo2 = Main.logo2Texture;
-                if (SpriteSetting.Title) {
+                if (SpriteSetting.get.TitleChange) {
                     Main.logoTexture = Main.logo2Texture = ModContent.GetTexture("ZenMod/Textures/LogoZen");
                 }
             }
