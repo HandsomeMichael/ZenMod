@@ -1,1 +1,3 @@
-Fall of Zen : Rezened is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Fall of Zen : Rezened is an unofficial rework of fall of zen.
+
+idk if this will turn out well or not but whatever
